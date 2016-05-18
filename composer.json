@@ -13,7 +13,7 @@
 		"spider"
 	],
 	"require" : {
-		"fabpot/goutte" : "~3.1",
+		"fabpot/goutte" : "~1.0 || ~2.0 || ~3.1",
 		"jakeasmith/http_build_url" : "~1.0"
 	},
 	"require-dev" : {
