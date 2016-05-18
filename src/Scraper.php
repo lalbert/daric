@@ -214,7 +214,7 @@ class Scraper
      */
     public function setFollowCanonical($flag = true)
     {
-        $this->followCanonical = \boolval($flag);
+        $this->followCanonical = (bool) $flag;
 
         return $this;
     }
