@@ -267,7 +267,7 @@ class Spider implements \Countable, \Iterator
     /**
      * @param Daric\ExtractorInterface $countResultsExtractor
      */
-    public function setCountResultsExtractor(Daric\ExtractorInterface $countResultsExtractor)
+    public function setCountResultsExtractor(ExtractorInterface $countResultsExtractor)
     {
         $this->countResultsExtractor = $countResultsExtractor;
 
