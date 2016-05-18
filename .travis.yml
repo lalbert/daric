@@ -16,3 +16,7 @@ before_script:
   # Set up Composer
   - composer self-update || true
   - composer install
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  
