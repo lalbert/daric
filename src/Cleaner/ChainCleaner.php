@@ -18,7 +18,23 @@ class ChainCleaner implements CleanerInterface
      */
     public function __construct(array $cleaners)
     {
-        $this->cleaners = $cleaners;
+        foreach ($cleaners as $cleaner) {
+            $this->addCleaner($cleaner);
+        }
+    }
+
+    /**
+     * Add a cleaner to chain.
+     *
+     * @param CleanerInterface $cleaner
+     *
+     * @return \Daric\Cleaner\ChainCleaner
+     */
+    public function addCleaner(CleanerInterface $cleaner)
+    {
+        $this->cleaners[] = $cleaner;
+
+        return $this;
     }
 
     /**

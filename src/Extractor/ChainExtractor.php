@@ -18,7 +18,23 @@ class ChainExtractor implements ExtractorInterface
      */
     public function __construct(array $extractors)
     {
-        $this->extractors = $extractors;
+        foreach ($extractors as $extractor) {
+            $this->addExtractor($extractor);
+        }
+    }
+
+    /**
+     * Add an extractor to chain.
+     *
+     * @param ExtractorInterface $extractor
+     *
+     * @return \Daric\Extractor\ChainExtractor
+     */
+    public function addExtractor(ExtractorInterface $extractor)
+    {
+        $this->extractors[] = $extractor;
+
+        return $this;
     }
 
     /**

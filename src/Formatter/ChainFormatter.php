@@ -10,7 +10,23 @@ class ChainFormatter implements FormatterInterface
 
     public function __construct(array $formatters)
     {
-        $this->formatters = $formatters;
+        foreach ($formatters as $formatter) {
+            $this->addFormatter($formatter);
+        }
+    }
+
+    /**
+     * Add a formatter to chain.
+     *
+     * @param FormatterInterface $formatter
+     *
+     * @return \Daric\Formatter\ChainFormatter
+     */
+    public function addFormatter(FormatterInterface $formatter)
+    {
+        $this->formatters[] = $formatter;
+
+        return $this;
     }
 
     public function format($value, $data)
