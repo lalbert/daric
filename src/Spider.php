@@ -4,6 +4,8 @@ namespace Daric;
 
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
+use Symfony\Component\DomCrawler\Link;
+use Symfony\Component\DomCrawler\Crawler;
 
 /**
  * Spider is not intended to crawl all the links from a website, but only to
@@ -110,7 +112,12 @@ class Spider implements \Countable, \Iterator
      */
     protected function extractLinks()
     {
-        foreach ($this->linkExtractor->extract($this->content) as $link) {
+        $links = $this->linkExtractor->extract($this->content);
+        if (!\is_array($links)) {
+            throw new \InvalidArgumentException('linkExtractor must return an array.');
+        }
+
+        foreach ($links as $link) {
             $this->addLink($link);
         }
     }
@@ -126,11 +133,24 @@ class Spider implements \Countable, \Iterator
             return $this;
         }
 
+        $link = $this->prepareLink($link);
+
         if (!\in_array($link, $this->links)) {
             \array_push($this->links, $link);
         }
 
         return $this;
+    }
+
+    /**
+     * @param string $href
+     */
+    protected function prepareLink($href)
+    {
+        $crawler = new Crawler("<html><body><a href='$href'></a></body></html>", $this->getUri());
+        $link = $crawler->filter('a')->link();
+
+        return $link->getUri();
     }
 
     /**
@@ -188,6 +208,7 @@ class Spider implements \Countable, \Iterator
 
     /**
      * Set link extractor.
+     * Extractor must return an array of string, and string must be an uri.
      *
      * @param ExtractorInterface $linkExtractor
      *
