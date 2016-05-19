@@ -222,14 +222,8 @@ class Spider implements \Countable, \Iterator
     }
 
     /**
-     * @return the ExtractorInterface
-     */
-    public function getNextLinkExtractor()
-    {
-        return $this->nextLinkExtractor;
-    }
-
-    /**
+     * nextLinkExtractor must return a uri string.
+     *
      * @param Daric\ExtractorInterface $nextLinkExtractor
      */
     public function setNextLinkExtractor(ExtractorInterface $nextLinkExtractor)
@@ -278,14 +272,6 @@ class Spider implements \Countable, \Iterator
     }
 
     /**
-     * @return the ExtractorInterface
-     */
-    public function getCountResultsExtractor()
-    {
-        return $this->countResultsExtractor;
-    }
-
-    /**
      * @param Daric\ExtractorInterface $countResultsExtractor
      */
     public function setCountResultsExtractor(ExtractorInterface $countResultsExtractor)
@@ -306,7 +292,7 @@ class Spider implements \Countable, \Iterator
 
     public function getNextPage()
     {
-        return $this->nextLinkExtractor->extract($this->content);
+        return $this->prepareLink($this->nextLinkExtractor->extract($this->content));
     }
 
     /**
