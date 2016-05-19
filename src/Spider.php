@@ -104,7 +104,7 @@ class Spider implements \Countable, \Iterator
         $this->content = $this->getClient()->request('GET', $this->getUri());
         $this->extractLinks();
 
-        return $this;
+        return $this->links;
     }
 
     /**
@@ -261,6 +261,10 @@ class Spider implements \Countable, \Iterator
     public function count()
     {
         if ($this->countResultsExtractor) {
+            if (!$this->content) {
+                $this->spide();
+            }
+
             if (!$this->count) {
                 $this->count = (int) $this->countResultsExtractor->extract($this->content);
             }
@@ -373,11 +377,6 @@ class Spider implements \Countable, \Iterator
         if (!$this->content) {
             $this->spide();
         }
-    }
-
-    public function getLimit()
-    {
-        return $this->limit;
     }
 
     /**
