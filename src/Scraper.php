@@ -156,7 +156,7 @@ class Scraper
      *
      * @param Goutte\Client $client
      */
-    public function setClient(Goutte\Client $client)
+    public function setClient(\Goutte\Client $client)
     {
         $this->client = $client;
     }
