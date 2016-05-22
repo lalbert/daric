@@ -159,6 +159,8 @@ class Scraper
     public function setClient(\Goutte\Client $client)
     {
         $this->client = $client;
+
+        return $this;
     }
 
     /**
