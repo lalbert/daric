@@ -2,7 +2,6 @@
 
 namespace Daric\Extractor;
 
-use Daric\ExtractorInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
 class CrawlerNodeHtmlExtractor implements ExtractorInterface

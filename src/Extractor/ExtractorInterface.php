@@ -1,6 +1,6 @@
 <?php
 
-namespace Daric;
+namespace Daric\Extractor;
 
 interface ExtractorInterface
 {

@@ -2,8 +2,6 @@
 
 namespace Daric\Cleaner;
 
-use Daric\CleanerInterface;
-
 /**
  * Strip whitespace (or other characters) from the beginning and end of a
  * string.

@@ -2,8 +2,6 @@
 
 namespace Daric\Extractor;
 
-use Daric\ExtractorInterface;
-
 /**
  * Chain multiple extractors.
  *

@@ -2,8 +2,6 @@
 
 namespace Daric\Formatter;
 
-use Daric\FormatterInterface;
-
 class ExplodeFormatter implements FormatterInterface
 {
     protected $delimiter;

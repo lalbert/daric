@@ -1,6 +1,6 @@
 <?php
 
-namespace Daric;
+namespace Daric\Cleaner;
 
 interface CleanerInterface
 {
