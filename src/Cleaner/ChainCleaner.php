@@ -2,6 +2,8 @@
 
 namespace Daric\Cleaner;
 
+use Daric\CleanerInterface;
+
 /**
  * Chain multiple cleaners.
  *

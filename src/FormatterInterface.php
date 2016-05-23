@@ -1,6 +1,6 @@
 <?php
 
-namespace Daric\Formatter;
+namespace Daric;
 
 interface FormatterInterface
 {
