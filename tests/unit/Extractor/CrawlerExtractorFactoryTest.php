@@ -79,4 +79,10 @@ class CrawlerExtractorFactoryTest extends \PHPUnit_Framework_TestCase
             ],
         ];
     }
+
+    public function testSimpleSelector()
+    {
+        $selectors = $this->factoryProvider();
+        $this->assertEquals($selectors['.selector'][1], $selectors['.selector'][0]);
+    }
 }
