@@ -239,6 +239,10 @@ class Scraper
      */
     public function getContent()
     {
+        if (!$this->content) {
+            $this->scrape();
+        }
+
         return $this->content;
     }
 
@@ -411,7 +415,7 @@ class Scraper
                 $value = $this->data[$name];
             }
 
-            $this->data[$name] = $formatter->format($value, $this->data);
+            $this->data[$name] = $formatter->format($value);
         }
 
         return $this->data;
