@@ -27,10 +27,10 @@ class ChainFormatter implements FormatterInterface
         return $this;
     }
 
-    public function format($value, $data)
+    public function format($value)
     {
         foreach ($this->formatters as $formatter) {
-            $value = $formatter->format($value, $data);
+            $value = $formatter->format($value);
         }
 
         return $value;

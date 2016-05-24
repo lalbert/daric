@@ -15,13 +15,13 @@ class ExplodeFormatter implements FormatterInterface
         $this->limit = $limit;
     }
 
-    public function format($value, $data)
+    public function format($value)
     {
         $result = $value;
 
         if (\is_array($result)) {
             foreach ($result as $k => $v) {
-                $result[$k] = $this->format($v, $data);
+                $result[$k] = $this->format($v);
             }
         } else {
             $arr = \explode($this->delimiter, $result, $this->limit);
