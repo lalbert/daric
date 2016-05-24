@@ -440,11 +440,11 @@ class Scraper
     protected function prepareActionObject($object)
     {
         if (!\is_object($object)) {
-            throw new \InvalidArgumentException('$Object must be an object.');
+            throw new \InvalidArgumentException('$object must be an object. '.\gettype($object).' given.');
         }
 
-        if ($object instanceof SpiderInjectorInterface) {
-            $object->setSpider($this);
+        if ($object instanceof ScraperInjectorInterface) {
+            $object->setScraper($this);
         }
     }
 
