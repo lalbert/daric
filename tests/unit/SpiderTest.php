@@ -1,6 +1,6 @@
 <?php
 
-namespace Daric\Test;
+namespace Daric\Tests;
 
 use Daric\Spider;
 use Daric\Extractor\CrawlerExtractorFactory;
