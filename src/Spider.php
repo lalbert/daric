@@ -6,6 +6,7 @@ use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 use Symfony\Component\DomCrawler\Link;
 use Symfony\Component\DomCrawler\Crawler;
+use Daric\Extractor\ExtractorInterface;
 
 /**
  * Spider is not intended to crawl all the links from a website, but only to

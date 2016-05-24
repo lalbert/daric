@@ -4,6 +4,9 @@ namespace Daric;
 
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
+use Daric\Extractor\ExtractorInterface;
+use Daric\Formatter\FormatterInterface;
+use Daric\Cleaner\CleanerInterface;
 
 class Scraper
 {
