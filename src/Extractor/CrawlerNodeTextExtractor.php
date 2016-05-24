@@ -53,7 +53,7 @@ class CrawlerNodeTextExtractor implements ExtractorInterface
             break;
             case 'array':
                 $result = [];
-                $content->each(function ($node) use (&$result) {
+                $content->each(function (Crawler $node) use (&$result) {
                     if (count($node)) {
                         $result[] = $node->text();
                     }
