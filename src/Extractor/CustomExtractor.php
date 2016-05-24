@@ -2,7 +2,6 @@
 
 namespace Daric\Extractor;
 
-
 class CustomExtractor implements ExtractorInterface
 {
     protected $closure;

@@ -2,7 +2,6 @@
 
 namespace Daric\Cleaner;
 
-
 /**
  * Chain multiple cleaners.
  *

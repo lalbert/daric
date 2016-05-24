@@ -1,4 +1,5 @@
 <?php
+
 namespace Daric\Extractor;
 
 use Symfony\Component\DomCrawler\Crawler;
@@ -27,7 +28,6 @@ class CrawlerNextExtractor implements ExtractorInterface
 
     public function extract($content)
     {
-
         if (!($content instanceof Crawler)) {
             throw new \InvalidArgumentException('$content must be an instance of Symfony\Component\DomCrawler\Crawler');
         }
@@ -37,6 +37,7 @@ class CrawlerNextExtractor implements ExtractorInterface
         }
 
         $next = $content->nextAll();
+
         return $next;
     }
 }

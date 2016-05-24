@@ -2,7 +2,6 @@
 
 namespace Daric\Cleaner;
 
-
 /**
  * Strip whitespace (or other characters) from the beginning and end of a
  * string.
@@ -19,7 +18,7 @@ class TrimCleaner implements CleanerInterface
      * You can also specify the characters you want to strip, by means of the
      * character_mask parameter. Simply list all characters that you want to
      * be stripped. With .. you can specify a range of characters.
-
+     
      *
      * @param string $charlist
      */

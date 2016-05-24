@@ -2,7 +2,6 @@
 
 namespace Daric\Cleaner;
 
-
 /**
  * Strip whitespace (or other characters) from the beginning of a string.
  *

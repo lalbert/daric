@@ -252,6 +252,7 @@ class Scraper
      */
     public function addExtractor($name, ExtractorInterface $extractor)
     {
+        $this->prepareActionObject($extractor);
         $this->extractors[$name] = $extractor;
 
         return $this;
@@ -303,6 +304,8 @@ class Scraper
      */
     public function addCleaner($name, CleanerInterface $cleaner)
     {
+        $this->prepareActionObject($cleaner);
+
         $this->cleaners[$name] = $cleaner;
 
         return $this;
@@ -372,6 +375,7 @@ class Scraper
 
     public function addFormatter($name, FormatterInterface $formatter)
     {
+        $this->prepareActionObject($formatter);
         $this->formatters[$name] = $formatter;
 
         return $this;
@@ -427,6 +431,17 @@ class Scraper
     public function getData()
     {
         return $this->data;
+    }
+
+    protected function prepareActionObject($object)
+    {
+        if (!\is_object($object)) {
+            throw new \InvalidArgumentException('$Object must be an object.');
+        }
+
+        if ($object instanceof SpiderInjectorInterface) {
+            $object->setSpider($this);
+        }
     }
 
     /**

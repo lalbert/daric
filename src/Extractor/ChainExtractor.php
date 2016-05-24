@@ -2,7 +2,6 @@
 
 namespace Daric\Extractor;
 
-
 /**
  * Chain multiple extractors.
  *

@@ -2,7 +2,6 @@
 
 namespace Daric\Formatter;
 
-
 class ChainFormatter implements FormatterInterface
 {
     protected $formatters = [];
