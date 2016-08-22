@@ -57,4 +57,4 @@ foreach ($spider as $pageUri) {
 
 ## Licence
 
-Daric is licensed under the MIT License - see the [LICENSE](./LICENCE) file for details
+Daric is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
